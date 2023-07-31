@@ -1,0 +1,15 @@
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\bin\Debug\net6.0\HomeWork8.exe
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\bin\Debug\net6.0\HomeWork8.deps.json
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\bin\Debug\net6.0\HomeWork8.runtimeconfig.json
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\bin\Debug\net6.0\HomeWork8.dll
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\bin\Debug\net6.0\HomeWork8.pdb
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.csproj.AssemblyReference.cache
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.AssemblyInfoInputs.cache
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.AssemblyInfo.cs
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.csproj.CoreCompileInputs.cache
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.dll
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\refint\HomeWork8.dll
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.pdb
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\HomeWork8.genruntimeconfig.cache
+C:\Users\lp-fa\Desktop\Программирование\C#semenars\HomeWork8\obj\Debug\net6.0\ref\HomeWork8.dll

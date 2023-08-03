@@ -128,7 +128,7 @@ SortingToMin(myArray);
 Задача 58: Задайте две матрицы. Напишите программу, которая будет находить 
 произведение двух матриц.
 */
-
+/*
 int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
 {
     int[,] array = new int[rows, columns];
@@ -143,6 +143,7 @@ int[,] CreateRandom2dArray(int rows, int columns, int minValue, int maxValue)
 
 void Show2dArray(int [,] array)
 {
+    
     for(int i = 0; i < array.GetLength(0); i++)
     {
         for(int j = 0; j < array.GetLength(1); j++)
@@ -152,21 +153,20 @@ void Show2dArray(int [,] array)
     }
 }
 
-int[,] CreateMultiple(int[,]array1, int[,]array2)
+int[,] CreateMultiple(int[,] array1, int[,] array2)
 {   
-    if (array1.GetLength(0)!=array2.GetLength(1)) 
-    {
-        Console.WriteLine("Матрицы нельзя перемножить");
-    }
+    
     int[,] array3 = new int[array1.GetLength(0), array2.GetLength(1)];
     for (int i = 0; i < array1.GetLength(0); i++)
     {
         for (int j = 0; j < array2.GetLength(1); j++)
-        {
-            for(int k = 0; k < array2.GetLength(0); k++)
+        {   
+            int sum=0;
+            for(int k = 0; k < array1.GetLength(1); k++)
             {
-                array3[i,j] = array1[i,k]*array2[k,j];
+                sum = sum + array1[i,k]*array2[k,j];
             }
+            array3[i,j] = sum;
         }
     }
     return array3;
@@ -190,9 +190,134 @@ Console.Write("input a max possible value of the 2nd array: ");
 int maxValue2 = Convert.ToInt32(Console.ReadLine());
 int [,] myArray = CreateRandom2dArray(rows, columns, minValue, maxValue);
 int [,] myArray2 = CreateRandom2dArray(rows2, columns2, minValue2, maxValue2);
+
 Show2dArray(myArray);
 Console.WriteLine();
 Show2dArray(myArray2);
 Console.WriteLine();
 int [,] myArray3 = CreateMultiple (myArray, myArray2);
-Show2dArray(myArray3);
+if (rows!=columns2) Console.WriteLine("Матрицы нельзя перемножить");
+else Show2dArray(myArray3);
+
+/*
+Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных 
+чисел. Напишите программу, которая будет построчно выводить массив, 
+добавляя индексы каждого элемента.
+*/
+/*
+void CreateRandom3dArray(int[,,] array)
+{
+    int[] temp = new int[array.GetLength(0) * array.GetLength(1) * array.GetLength(2)];
+    int number =0; 
+    for(int i = 0; i < temp.GetLength(0); i++)
+    {   
+        temp[i] = new Random().Next(10, 100);
+        number = temp[i];
+        if (i>=1)
+        {
+            for(int j = 0; j < 1; j++)
+            {
+
+                while (temp[i]==temp[j])
+                {
+                    temp[i] = new Random().Next(10,100);
+                    j=0;
+                    number = temp[i];
+                }
+                number = temp[i];
+            }
+        }
+    }
+
+    int count = 0;
+    for (int i = 0; i<array.GetLength(0); i++)
+    {
+        for (int j = 0; j<array.GetLength(1); j++)
+        {
+            for (int k = 0; k<array.GetLength(2); k++)
+            {
+                array [i, j, k]=temp[count];
+                count++;
+            }
+        }
+    }
+}
+
+void Show3dArray(int [,,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write($"{array[i, j, k]}({i}{j}{k}) ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+Console.Write("input size of the 1st dimension: ");
+int x = Convert.ToInt32(Console.ReadLine());
+Console.Write("input size of the 2nd dimension: ");
+int y = Convert.ToInt32(Console.ReadLine());
+Console.Write("input size of the 3rd dimension: ");
+int z = Convert.ToInt32(Console.ReadLine());
+
+int[,,] array = new int[x,y,z];
+
+CreateRandom3dArray(array);
+Show3dArray(array);
+
+*/
+/*Задача 62. Напишите программу, которая заполнит спирально массив 
+4 на 4.
+*/
+void ShowArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] / 10 <= 0)
+            {
+                Console.Write($" {array[i, j]} ");
+            }
+            else 
+            {
+                Console.Write($"{array[i, j]} ");
+            }
+        }
+        Console.WriteLine();
+    }
+}
+
+void CreateHelicalArray(int[,] array)
+{
+    int temp = 1;
+    int i = 0;
+    int j = 0;
+
+    while (temp <= array.GetLength(0) * array.GetLength(1))
+    {
+        array[i, j] = temp;
+        temp += 1;
+
+        if (i <= j + 1 && i + j < array.GetLength(1) - 1)
+            j += 1;
+        else if (i < j && i + j >= array.GetLength(0) - 1)
+            i += 1;
+        else if (i >= j && i + j > array.GetLength(1) - 1)
+            j -= 1;
+        else
+            i -= 1;
+    }
+}
+
+const int arraySize = 4;
+int[,] squareMatrix = new int[arraySize, arraySize];
+
+CreateHelicalArray(squareMatrix);
+ShowArray(squareMatrix);
